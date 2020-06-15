@@ -37,7 +37,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     createPage({
       path,
-      component: require.resolve(`./src/templates/${template}.tsx`)
+      component: require.resolve(`./src/templates/${template}.tsx`),
+      context: {
+        listingType: path.replace('/', '')
+      }
     })
   })
   

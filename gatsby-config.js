@@ -5,7 +5,7 @@ const postcssImport = require('postcss-import');
 module.exports = {
   siteMetadata: {
     title: `WebGrower`,
-    description: `Почти каждодневный журнал про веб-разработку`,
+    description: `Почти ежедневный журнал про веб-разработку`,
     author: `@gatsbyjs`,
   },
   plugins: [

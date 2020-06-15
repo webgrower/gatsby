@@ -14,7 +14,7 @@ const Header = () => (
         to="/"
       >
         <Logo width="128" height="128" />
-        <h6 className={styles.subheader}>Почти каждодневный журнал про веб-разработку</h6>
+        <h6 className={styles.subheader}>Почти ежедневный журнал про веб-разработку</h6>
       </Link>
     </div>
 
