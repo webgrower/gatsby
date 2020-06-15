@@ -1,0 +1,27 @@
+.menu {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.menu-item {
+  display: inline-block;
+  margin-right: 1.5em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.menu-link {
+  color: rgba(0,0,0,0.3);
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+.menu-link:hover,
+.menu-link-active {
+  color: #000;
+  border-color: #000;
+}

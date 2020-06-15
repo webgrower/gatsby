@@ -1,7 +1,11 @@
+const postcssPresetEnv = require('postcss-preset-env');
+const postcssExtendRule = require('postcss-extend-rule');
+const postcssImport = require('postcss-import');
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `WebGrower`,
+    description: `Почти каждодневный журнал про веб-разработку`,
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -11,6 +15,20 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/content/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `articles`,
+        path: `${__dirname}/content/articles`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `links`,
+        path: `${__dirname}/content/links`,
       },
     },
     {
@@ -42,6 +60,21 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [
+          postcssImport(),
+          postcssPresetEnv({
+            stage: 3,
+            features: {
+              'nesting-rules': true,
+            },
+          }),
+          postcssExtendRule()
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -52,6 +85,14 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets\/inline/
+        }
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

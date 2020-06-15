@@ -2,13 +2,16 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
+import Listing from '../components/Listing';
 
 const HomePage = ({ data }) => {
-  const { frontmatter, html } = data.page;
+  const { articles, links, page } = data;
+  const { html } = page;
 
   return (
     <Layout>
-        <h1>{frontmatter.title}</h1>
+        <Listing items={articles.edges} title="Статьи" />
+        <Listing items={links.edges} title="Ссылки" />
         <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
@@ -20,6 +23,38 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+      }
+    }
+    articles: allMarkdownRemark(
+      filter: {
+        frontmatter: {
+          template: { eq: "article" }
+        }
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            path
+            title
+          }
+        }
+      }
+    }
+    links: allMarkdownRemark(
+      filter: {
+        frontmatter: {
+          template: { eq: "link" }
+        }
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            path
+            title
+          }
+        }
       }
     }
   }
