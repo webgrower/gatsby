@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import Listing from '../components/Listing';
+import Seo from "../components/seo";
 
 const ListPage = ({ data }) => {
   const { items, page } = data;
@@ -10,6 +11,7 @@ const ListPage = ({ data }) => {
 
   return (
     <Layout>
+        <Seo title={frontmatter.title} />
         <Listing items={items.edges} title={frontmatter.title} />
         <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
