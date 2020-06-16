@@ -1,5 +1,20 @@
 const { fmImagesToRelative } = require('gatsby-remark-relative-source');
 
+exports.createSchemaCustomization = ({ actions }) => {
+	const { createTypes } = actions;
+
+	const typeDefs = `
+		type MarkdownRemark implements Node {
+			frontmatter: Frontmatter
+		}
+		type Frontmatter {
+      linkUrl: String
+		}
+	`;
+
+	createTypes(typeDefs);
+};
+
 exports.onCreateNode = ({ node }) => {
 	fmImagesToRelative(node);
 };

@@ -8,7 +8,7 @@ const LinkPage = ({ data }) => {
 
   return (
     <Layout>
-        <h1>{frontmatter.title}</h1>
+        <h1><a href={frontmatter.linkUrl}>{frontmatter.title}</a></h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
@@ -20,6 +20,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        linkUrl
       }
     }
   }

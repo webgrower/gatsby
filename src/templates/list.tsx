@@ -30,12 +30,14 @@ export const pageQuery = graphql`
           category: { eq: $listingType }
         }
       }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
           frontmatter {
             path
             title
+            linkUrl
           }
         }
       }

@@ -1,0 +1,20 @@
+.listing-item {
+  position: relative;
+}
+
+.listing-item-padding {
+  padding-left: 25px;
+  margin-left: -25px;
+}
+
+.listing-icon-link {
+  border: none;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  display: none;
+}
+
+.listing-item:hover .listing-icon-link {
+  display: block;
+}

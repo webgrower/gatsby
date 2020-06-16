@@ -1,5 +1,8 @@
 import React from 'react';
+import classnames from 'classnames';
 import { Link } from 'gatsby';
+import LinkIcon from '../../assets/inline/link.svg';
+import styles from './listing.module.css';
 
 const Listing = ({items, title}) => {
   if (!items || items.length < 1) {
@@ -7,10 +10,27 @@ const Listing = ({items, title}) => {
   }
 
   const itemsList = items.map((item, index) => {
-    const { path, title } = item.node.frontmatter;
+    const { linkUrl, path, title } = item.node.frontmatter;
+
+    const renderLinkUrl = () => {
+      if (!linkUrl) {
+        return null
+      }
+
+      return (
+        <a href={linkUrl} className={styles.listingIconLink}>
+          <LinkIcon width="18" height="18" />
+        </a>
+      )
+    }
+
+    const listItemClass = classnames(styles.listingItem, {
+      [styles.listingItemPadding]: linkUrl
+    })
 
     return (
-      <p key={`list-item-${index}`}>
+      <p key={`list-item-${index}`} className={listItemClass}>
+        {renderLinkUrl()}
         <Link to={path}>{title}</Link>
       </p>
     ) 
