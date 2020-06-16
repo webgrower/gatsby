@@ -7,7 +7,7 @@ module.exports = {
     title: `WebGrower`,
     description: `Почти ежедневный журнал про веб-разработку`,
     author: `@gatsbyjs`,
-    image: 'images/webgrower-icon.png',
+    image: 'images/share.png',
     baseUrl: 'https://webgrower.ru/'
   },
   plugins: [
