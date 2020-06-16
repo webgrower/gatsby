@@ -16,14 +16,18 @@ function Seo({ description, lang, meta, title, type }) {
       query {
         site {
           siteMetadata {
+            baseUrl
             title
             description
             author
+            image
           }
         }
       }
     `
   )
+  
+  const { baseUrl, image } = site.siteMetadata;
 
   const metaDescription = description || site.siteMetadata.description
   const seoTitle = title || site.siteMetadata.title;
@@ -51,6 +55,10 @@ function Seo({ description, lang, meta, title, type }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: 'og:image',
+          content: baseUrl + image,
         },
         {
           name: `twitter:card`,
