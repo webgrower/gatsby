@@ -1,0 +1,22 @@
+---
+label: link
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: path
+  label: path
+- type: text
+  name: template
+  label: template
+- type: text
+  name: category
+  label: category
+- type: text
+  name: linkUrl
+  label: linkUrl
+- type: datetime
+  name: date
+  label: date
