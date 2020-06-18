@@ -8,6 +8,18 @@ fields:
 - type: text
   name: path
   label: path
-- type: text
-  name: template
+- name: template
+  type: select
+  default: page
+  config:
+    required: true
+    options:
+    - home
+    - list
+    - page
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
   label: template
