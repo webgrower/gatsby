@@ -11,9 +11,13 @@ fields:
 - type: text
   name: template
   label: template
+  hidden: true
+  default: article
 - type: text
   name: category
   label: category
+  default: articles
+  hidden: true
 - type: datetime
   name: date
   label: date
