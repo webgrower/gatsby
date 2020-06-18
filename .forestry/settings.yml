@@ -18,6 +18,11 @@ sections:
   match: "**/*"
   templates:
   - link
+- type: directory
+  path: content/pages
+  label: Страницы
+  create: all
+  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
