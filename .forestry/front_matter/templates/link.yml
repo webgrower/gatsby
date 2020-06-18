@@ -11,9 +11,13 @@ fields:
 - type: text
   name: template
   label: template
+  hidden: true
+  default: link
 - type: text
   name: category
   label: category
+  hidden: true
+  default: links
 - type: text
   name: linkUrl
   label: linkUrl
