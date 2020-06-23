@@ -4,7 +4,7 @@ category: links
 title: Safari 14 Beta Release Notes
 path: "/links/safari-14-beta-release-notes"
 linkUrl: https://developer.apple.com/documentation/safari-release-notes/safari-14-beta-release-notes
-date: 2020-06-22T23:38:00Z
+date: 2020-06-22T23:38:00.000+00:00
 
 ---
 Вчера была конференция WWDC 2020, на которой Apple представила среди прочего новую версию Safari 14, которая появится в iOS 14 и macOS 11.
@@ -24,7 +24,7 @@ date: 2020-06-22T23:38:00Z
 * Внедрили асинхронную прокрутку для `overflow: scroll` и `<iframe>` в macOS.
 * Улучшили скорость закрытия табов
 * Улучшили производительность работы `IndexedDB`
-* Улучшили производительность доступа к кукам в JavaScript 
+* Улучшили производительность доступа к кукам в JavaScript
 * Улучшили производительность конструкций `for-of`
 
 ## Приватность
@@ -56,7 +56,7 @@ date: 2020-06-22T23:38:00Z
 
 ## Web Inspector
 
-* Added support for a bootstrap script.
+* Добавлена поддержка для начальной загрузки скриптов
 * Добавлена вкладка Sources, которая объединяет вкладку Resources и Debugger
 * Добавлен виджет выбора цвета в формате HSL с поддержкой P3
 * Информация о Web Animations, CSS анимациях, и CSS переходах добавлена во вкладку  Timelines
