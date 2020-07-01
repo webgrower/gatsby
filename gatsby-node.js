@@ -9,6 +9,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 		}
 		type Frontmatter {
       linkUrl: String
+      headerImg: File @fileByRelativePath
 		}
 	`;
 
