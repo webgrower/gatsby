@@ -6,6 +6,7 @@ fields:
   name: template
   label: template
   default: link
+  hidden: true
 - type: text
   name: category
   label: category
