@@ -33,6 +33,7 @@ export const pageQuery = graphql`
           template: { eq: "article" }
         }
       }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
@@ -49,6 +50,7 @@ export const pageQuery = graphql`
           template: { eq: "link" }
         }
       }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
