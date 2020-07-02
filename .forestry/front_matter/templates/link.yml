@@ -1,5 +1,5 @@
 ---
-label: link with image
+label: link
 hide_body: false
 fields:
 - type: text
@@ -23,3 +23,5 @@ fields:
 - type: datetime
   name: date
   label: date
+pages:
+- content/links/safari-14-beta-release-notes.md
