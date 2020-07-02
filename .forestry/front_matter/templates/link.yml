@@ -1,7 +1,13 @@
 ---
-label: link
+label: link with image
 hide_body: false
 fields:
+- type: text
+  name: template
+  label: template
+- type: text
+  name: category
+  label: category
 - type: text
   name: title
   label: title
@@ -9,25 +15,11 @@ fields:
   name: path
   label: path
 - type: text
-  name: template
-  label: template
-  hidden: true
-  default: link
-- type: text
-  name: category
-  label: category
-  hidden: true
-  default: links
-- type: text
   name: linkUrl
   label: linkUrl
+- type: file
+  name: headerImg
+  label: headerImg
 - type: datetime
   name: date
   label: date
-- name: headerImage
-  type: file
-  config:
-    maxSize: 64
-  label: headerImage
-pages:
-- content/links/safari-14-beta-release-notes.md
