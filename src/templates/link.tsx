@@ -14,11 +14,11 @@ const LinkPage = ({ data }) => {
       return null;
     }
 
-    const imageStyles = {
+    const mediaStyles = {
       margin: '40px -225px'
     }
 
-    return <HeaderImage style={imageStyles} fluid={frontmatter.headerImg.childImageSharp.fluid} />
+    return <HeaderImage style={mediaStyles} fluid={frontmatter.headerImg.childImageSharp.fluid} />
   }
 
   return (

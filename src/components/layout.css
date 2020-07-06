@@ -618,3 +618,7 @@ pre tt:after {
 .content {
   margin-bottom: auto;
 }
+
+.gatsby-resp-iframe-wrapper {
+  margin: 40px -225px;
+}
