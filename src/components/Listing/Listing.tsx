@@ -1,16 +1,20 @@
-import React from 'react';
-import classnames from 'classnames';
-import { Link } from 'gatsby';
-import LinkIcon from '../../assets/inline/link.svg';
-import styles from './listing.module.css';
+import React from "react"
+import classnames from "classnames"
+import { Link } from "gatsby"
+import LinkIcon from "../../assets/inline/link.svg"
+import {
+  listingIconLink,
+  listingItem,
+  listingItemPadding,
+} from "./listing.module.css"
 
-const Listing = ({items, title}) => {
+const Listing = ({ items, title }) => {
   if (!items || items.length < 1) {
-    return null;
+    return null
   }
 
   const itemsList = items.map((item, index) => {
-    const { linkUrl, path, title } = item.node.frontmatter;
+    const { linkUrl, path, title } = item.node.frontmatter
 
     const renderLinkUrl = () => {
       if (!linkUrl) {
@@ -18,14 +22,14 @@ const Listing = ({items, title}) => {
       }
 
       return (
-        <a href={linkUrl} className={styles.listingIconLink}>
+        <a href={linkUrl} className={listingIconLink}>
           <LinkIcon width="18" height="18" />
         </a>
       )
     }
 
-    const listItemClass = classnames(styles.listingItem, {
-      [styles.listingItemPadding]: linkUrl
+    const listItemClass = classnames(listingItem, {
+      [listingItemPadding]: linkUrl,
     })
 
     return (
@@ -33,7 +37,7 @@ const Listing = ({items, title}) => {
         {renderLinkUrl()}
         <Link to={path}>{title}</Link>
       </p>
-    ) 
+    )
   })
 
   return (
@@ -44,4 +48,4 @@ const Listing = ({items, title}) => {
   )
 }
 
-export default Listing;
+export default Listing

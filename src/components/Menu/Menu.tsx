@@ -1,40 +1,39 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react"
+import { Link } from "gatsby"
 
-import styles from './menu.module.css';
+import { menuItem, menuLink, menuLinkActive, menuRoot } from "./menu.module.css"
 
 const menu = [
   {
-    text: 'Главная',
-    url: '/'
+    text: "Главная",
+    url: "/",
   },
   {
-    text: 'Статьи',
-    url: '/articles'
+    text: "Статьи",
+    url: "/articles",
   },
   {
-    text: 'Ссылки',
-    url: '/links'
+    text: "Ссылки",
+    url: "/links",
   },
   {
-    text: 'Авторы',
-    url: '/authors'
+    text: "Авторы",
+    url: "/authors",
   },
   {
-    text: 'О проекте',
-    url: '/about'
+    text: "О проекте",
+    url: "/about",
   },
 ]
 
 const Menu = () => {
-
   const renderMenuItems = () => {
     return menu.map((item, index) => {
       return (
-        <li className={styles.menuItem} key={`menu-item-${index}`}>
+        <li className={menuItem} key={`menu-item-${index}`}>
           <Link
-            className={styles.menuLink}
-            activeClassName={styles.menuLinkActive}
+            className={menuLink}
+            activeClassName={menuLinkActive}
             to={item.url}
           >
             {item.text}
@@ -46,11 +45,9 @@ const Menu = () => {
 
   return (
     <nav>
-      <ul className={styles.menu}>
-        {renderMenuItems()}
-      </ul>
+      <ul className={menuRoot}>{renderMenuItems()}</ul>
     </nav>
   )
 }
 
-export default Menu;
+export default Menu

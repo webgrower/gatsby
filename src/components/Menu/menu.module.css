@@ -1,4 +1,4 @@
-.menu {
+.menuRoot {
   margin: 0;
   padding: 0;
   text-align: center;
@@ -14,7 +14,7 @@
 }
 
 .menu-link {
-  color: rgba(0,0,0,0.3);
+  color: rgba(0, 0, 0, 0.3);
   border-bottom: 2px solid transparent;
   text-decoration: none;
   padding-bottom: 4px;
